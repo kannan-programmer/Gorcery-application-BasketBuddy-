@@ -1,0 +1,136 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="300" viewBox="0 0 600 300">
+  <!-- Background Circle with Gradient -->
+  <circle cx="100" cy="150" r="100" fill="url(#gradBackground)" />
+
+  <!-- Gradient Definition -->
+  <defs>
+    <radialGradient id="gradBackground" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#FFD54F;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FF6F00;stop-opacity:1" />
+    </radialGradient>
+  </defs>
+
+  <!-- 3D Shopping Cart -->
+  <g id="cart" transform="translate(0, 0)">
+    <!-- Cart Body -->
+    <rect x="40" y="140" width="120" height="60" fill="#FFD54F" stroke="#3E2723" stroke-width="5" rx="10" ry="10">
+      <!-- Move up and down animation -->
+      <animateTransform attributeName="transform" type="translate" values="0,0; 0,-5; 0,0" dur="2s" repeatCount="indefinite" />
+    </rect>
+
+    <!-- Cart Handle -->
+    <line x1="40" y1="140" x2="30" y2="110" stroke="#3E2723" stroke-width="6" />
+    <line x1="160" y1="140" x2="170" y2="110" stroke="#3E2723" stroke-width="6" />
+
+    <!-- Cart Wheels -->
+    <circle cx="60" cy="210" r="10" fill="#795548" />
+    <circle cx="140" cy="210" r="10" fill="#795548" />
+    
+  </g>
+
+  <!-- Vegetables and Fruits in the Cart -->
+  <g id="fruits-veggies" transform="translate(0, 0)">
+    <!-- Apple -->
+    <circle cx="60" cy="130" r="15" fill="url(#appleGradient)">
+      <!-- Bounce animation -->
+      <animate attributeName="cy" values="130; 125; 130" dur="1.5s" repeatCount="indefinite" />
+    </circle>
+    <rect x="57" y="110" width="6" height="10" fill="green" />
+    
+    <!-- Carrot -->
+    <polygon points="120,130 110,115 130,115" fill="url(#carrotGradient)">
+      <animateTransform attributeName="transform" type="rotate" values="0 120 130; 10 120 130; 0 120 130" dur="1.5s" repeatCount="indefinite" />
+    </polygon>
+
+    <!-- Orange -->
+    <circle cx="90" cy="120" r="12" fill="url(#orangeGradient)">
+      <!-- Bounce animation -->
+      <animate attributeName="cy" values="120; 115; 120" dur="1.8s" repeatCount="indefinite" />
+    </circle>
+
+    <!-- Banana -->
+    <path d="M100 130 C 95 120, 105 120, 110 130" fill="url(#bananaGradient)">
+      <animateTransform attributeName="transform" type="rotate" values="0 105 130; -10 105 130; 0 105 130" dur="2s" repeatCount="indefinite" />
+    </path>
+
+    <!-- Grapes -->
+    <circle cx="130" cy="135" r="10" fill="url(#grapesGradient)">
+      <animate attributeName="cy" values="135; 130; 135" dur="2s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="140" cy="145" r="8" fill="url(#grapesGradient)">
+      <animate attributeName="cy" values="145; 140; 145" dur="2.2s" repeatCount="indefinite" />
+    </circle>
+  </g>
+
+  <!-- Gradient Definitions for Fruits and Vegetables -->
+  <defs>
+    <!-- Apple Gradient -->
+    <radialGradient id="appleGradient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#FF5722;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#D84315;stop-opacity:1" />
+    </radialGradient>
+    
+    <!-- Carrot Gradient -->
+    <linearGradient id="carrotGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFA726;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#EF6C00;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Orange Gradient -->
+    <radialGradient id="orangeGradient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#FF9800;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#EF6C00;stop-opacity:1" />
+    </radialGradient>
+
+    <!-- Banana Gradient -->
+    <linearGradient id="bananaGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFE082;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FBC02D;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Grapes Gradient -->
+    <radialGradient id="grapesGradient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#7B1FA2;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#4A148C;stop-opacity:1" />
+    </radialGradient>
+  </defs>
+
+  <!-- Glowing "BasketBuddy" Text -->
+  <text x="230" y="150" font-family="Arial, sans-serif" font-size="60" fill="url(#textGradient)" filter="url(#glow)">
+    BasketBuddy
+    <!-- Glow effect -->
+    <animate attributeName="fill" values="#3E2723; #FF3D00; #3E2723" dur="2s" repeatCount="indefinite" />
+  </text>
+
+  <!-- Text Gradient -->
+  <defs>
+    <linearGradient id="textGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3E2723;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#5D4037;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Glow Filter for Text -->
+  <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+    <feGaussianBlur stdDeviation="4" result="coloredBlur" />
+    <feMerge>
+      <feMergeNode in="coloredBlur" />
+      <feMergeNode in="SourceGraphic" />
+    </feMerge>
+  </filter>
+
+  <!-- Tagline with Subtle Scaling and 3D Shadow -->
+  <text x="230" y="190" font-family="Arial, sans-serif" font-size="25" fill="#616161" filter="url(#glow)">
+    Your Grocery Companion
+    <animate attributeName="fill" values="#616161; #FF6F00; #616161" dur="3s" repeatCount="indefinite" />
+    <animateTransform attributeName="transform" type="scale" values="1; 1.05; 1" dur="2s" repeatCount="indefinite" />
+  </text>
+
+  <!-- Glowing Cart Animation -->
+  <g id="glowCart" opacity="0.7">
+    <circle cx="100" cy="150" r="90" fill="none" stroke="orange" stroke-width="8">
+      <animate attributeName="r" from="90" to="110" dur="2s" repeatCount="indefinite" />
+      <animate attributeName="stroke-opacity" from="0.5" to="0" dur="2s" repeatCount="indefinite" />
+    </circle>
+  </g>
+</svg>
